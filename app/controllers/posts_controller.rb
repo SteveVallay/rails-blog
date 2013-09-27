@@ -16,6 +16,17 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
   end
+  def edit
+    @post = Post.find_by_id(params[:id])
+  end
+  def update
+    @post = Post.find_by_id(params[:id])
+    if @post.update(params[:post].permit(:title,:text))
+      redirect_to @post
+    else
+      render 'edit'
+    end
+  end
   #private
   #  def post_params
   #    params.require(:post).permit(:title,:text)
