@@ -1,8 +1,7 @@
 
 <h1>Edit post</h1>
 <%= form_for @post, url: post_path(@post.id) do |f| %>
-
-  <% if @post and @post.errors.any? %>
+<% if @post and @post.errors.any? %>
   <div id="errorExplanation">
     <h2>
       <%=pluralize(@post.errors.count,"error") %> prohibited from this post:
@@ -27,7 +26,6 @@
   <p>
     <%= f.submit %>
   </p>
-
 <% end %>
 
 <%= link_to 'Back', posts_path %>
