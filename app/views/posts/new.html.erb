@@ -1,12 +1,13 @@
 
+<h1>Create new post</h1>
 <%= form_for :post, url: posts_path do |f| %>
   <p>
-    <%= f.label :title%> </br>
-    <%= f.text_field :title%>
+    <%= f.label :title%>  </br>
+    <%= f.text_field :title, size:"55",placeholder: "input title"%>
   </p>
   <p>
-    <%= f.label :text%> </br>
-    <%= f.text_area :text%>
+    <%= f.label :text%></br>
+    <%= f.text_area :text, size:"40", placeholder: "input content"%>
   </p>
   <p>
     <%= f.submit %>
